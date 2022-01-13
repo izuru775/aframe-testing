@@ -1,0 +1,63 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+/>
+
+<!-- Materialize icons-->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<link href="/styles.css" rel="stylesheet" type="text/css" />
+
+<a-scene>
+  <a-assets>
+    <img src="/images/box-NRM.jpg" id="rock-normal" />
+    <img src="/images/wall-NRM.jpg" id="wall-normal" />
+    <img src="/images/wall.jpg" id="wall" />
+  </a-assets>
+  <!-- <a-box
+    color="#FFFFFF"
+    width="4"
+    height="4"
+    depth="4"
+    repeat="1 1"
+    position="-2 1.5 -9"
+    normalMap="#rock-normal"
+    normal-texture-repeat = "1 1"
+    normal-scale="1 -1"
+    roughness="0.5"
+    src="/images/bricks.jpg"
+    side="double"
+  ></a-box> -->
+  <a-box
+    geometry="primitive: box; width: 4; height: 4; depth:4  "
+    position="-2 1.5 -9"
+    double
+    side="double"
+    scale="-1 1 1"
+    material=" color: #FFFFFF; normalMap: #rock-normal; normalScale: 1 -1; normalTextureRepeat:1 1; roughness:0.5; src:/images/box.jpg ;scale:-1 1 1"
+  ></a-box>
+
+  <a-box
+    geometry="primitive: box; width: 4; height: 4; depth:4"
+    material=" color: #FFFFFF; normalMap: #wall-normal; repeat:1 1; normalScale: 1 -1; normalTextureRepeat:1 1; roughness:0.9; src:#wall ;scale:-1 1 1"
+    position="2 1.5 -9"
+    side="double"
+    scale="-1 1 1"
+  ></a-box>
+
+  <a-sphere
+    material="color:blue;roughness:0.2;shader:flat;opacity:0.5"
+    radius="0.5"
+    position="-2 1.5 -9"
+  >
+  </a-sphere>
+</a-scene>
+
+<script>
+  $(document).ready(function () {
+    $(".sidenav").sidenav();
+  });
+</script>

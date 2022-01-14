@@ -1,0 +1,100 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+/>
+
+<!-- Materialize icons-->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<link href="/styles.css" rel="stylesheet" type="text/css" />
+
+<a-scene>
+  <a-assets>
+    <img id="my-image" src="http://localhost:3001/images/mountain.jpg" />
+    <img id="L09-img-C" src="http://localhost:3001/images/L09-img-C.jpg" />
+    <img id="L09-img-R" src="http://localhost:3001/images/L09-img-R.jpg" />
+    <img id="L09-img-L" src="http://localhost:3001/images/L09-img-L.jpg" />
+  </a-assets>
+
+  <!-- Image Primitive | IMG size 1024x768px -->
+  <!-- IMG width (px) = 1 m -->
+  <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+  <a-image
+    src="#my-image"
+    position="0 1.5 -3"
+    width="1"
+    height="0.75"
+    scale="3 3 1"
+  ></a-image>
+
+  <!-- Curved Image Primitive | SINGLE IMG | IMG size 1024x768 px -->
+  <!-- ? Radius of Arc -->
+  <!-- Width of Arc = 1 m -->
+  <!-- Length of Arc = 1.111 m -->
+  <!-- Angle Subtended by Arc = 90 deg -->
+  <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+  <a-curvedimage
+    src="#L09-img-C"
+    theta-length="90"
+    radius="0.707"
+    position="0 1.5 0"
+    height="0.833"
+    theta-start="135"
+    scale="3 3 3"
+  ></a-curvedimage>
+
+  <!-- Curved Image Primitive | 3-IMG LAYOUT | IMG size 1024x768 px -->
+  <!-- ? Radius of Arc -->
+  <!-- Width of Arc DIAMETER = 1 m -->
+  <!-- Length of Each IMG = 0.436 m -->
+  <!-- Angle Subtended by Arc = 180 deg -->
+  <!-- Angle Subtended by Each IMG = 50 deg -->
+  <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+  <!-- RIGHT IMG -->
+  <a-curvedimage
+    src="#L09-img-R"
+    theta-length="50"
+    radius="0.5"
+    position="0 1.5 0"
+    height="0.327"
+    theta-start="90"
+    scale="3 3 3"
+  ></a-curvedimage>
+  <a-curvedimage
+    src="#L09-img-C"
+    theta-length="50"
+    radius="0.5"
+    position="0 1.5 0"
+    height="0.327"
+    theta-start="155"
+    scale="3 3 3"
+  ></a-curvedimage>
+  <a-curvedimage
+    src="#L09-img-L"
+    theta-length="50"
+    radius="0.5"
+    position="0 1.5 0"
+    height="0.327"
+    theta-start="220"
+    scale="3 3 3"
+  ></a-curvedimage>
+
+  <!-- <a-box
+    color="red"
+    opacity="0.5"
+    width="3"
+    height="0.1"
+    depth="3"
+    position="0 1.5 -1.5"
+  >
+  </a-box> -->
+</a-scene>
+
+<script>
+  $(document).ready(function () {
+    $(".sidenav").sidenav();
+  });
+</script>
